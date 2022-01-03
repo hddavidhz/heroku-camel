@@ -127,15 +127,15 @@
       </plugin>
 
       <!-- Allows the example to be run via 'mvn camel:run' -->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.camel</groupId>-->
-<!--        <artifactId>camel-maven-plugin</artifactId>-->
-<!--        <version>3.12.0</version>-->
-<!--        <configuration>-->
-<!--          <logClasspath>true</logClasspath>-->
-<!--          <mainClass>org.example.MainApp</mainClass>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
+      <plugin>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-maven-plugin</artifactId>
+        <version>3.12.0</version>
+        <configuration>
+          <logClasspath>true</logClasspath>
+          <mainClass>org.example.MainApp</mainClass>
+        </configuration>
+      </plugin>
 
     </plugins>
   </build>
