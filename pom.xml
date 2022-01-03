@@ -67,12 +67,6 @@
       <scope>runtime</scope>
       <version>${log4j2-version}</version>
     </dependency>
-    <!-- testing -->
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-test</artifactId>
-      <scope>test</scope>
-    </dependency>
 
     <dependency>
       <groupId>javax.annotation</groupId>
