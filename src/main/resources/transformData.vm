@@ -1,0 +1,29 @@
+{
+    #set($start = 0)
+    #set($end = $body.size() - 1)
+    #set($range = [$start..$end])
+    #foreach($i in $range)
+    {
+        "nombre":"${body.get($i).getNombre()}",
+        "apellido":"${body.get($i).getApellido()}",
+        "telefono":"${body.get($i).getTelefono()}",
+
+            #if($body.get($i).getPrestamos().size() == 0)
+                "prestamos":"Sin Prestamos"
+            #else
+                "prestamos":
+                [
+                    #set($endpre = $body.get($i).getPrestamos().size() - 1)
+                    #set($rangepre = [$start..$endpre])
+                    #foreach($e in $rangepre)
+                    {
+                        "cantidad":"$!{body.get($i).getPrestamos().get($e).getCantidad()}",
+                        "interes":"$!{body.get($i).getPrestamos().get($e).getInteres()}",
+                        "numeroCuotas":"$!{body.get($i).getPrestamos().get($e).getN_cuotas()}"
+                    },
+                    #end
+                ]
+            #end
+    },
+    #end
+}

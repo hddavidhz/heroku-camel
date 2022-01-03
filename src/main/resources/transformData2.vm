@@ -1,0 +1,27 @@
+{
+    #set($start = 0)
+    ##set($end = $body.size() - 1)
+    ##set($range = [$start..$end])
+    ##foreach($i in $range)
+    {
+        "Nombre":"${body.get(0).getNombre()}",
+        "Apellido":"${body.get(0).getApellido()}",
+
+            #if($body.get(0).getPrestamos().size() == 0)
+                "Prestamos":"Sin Prestamos"
+            #else
+                "Deudas":
+                [
+                    #set($endpre = $body.get(0).getPrestamos().size() - 1)
+                    #set($rangepre = [$start..$endpre])
+                    #foreach($e in $rangepre)
+                    {
+                        "Cantinad":"$!{body.get(0).getPrestamos().get($e).getCantidad()}",
+                        "Numero Cuotas":"$!{body.get(0).getPrestamos().get($e).getN_cuotas()}"
+                    },
+                    #end
+                ]
+            #end
+    },
+    ##end
+}
