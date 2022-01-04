@@ -12,8 +12,10 @@ import org.example.util.ResponsEnum;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MyRouteBuilder extends RouteBuilder {
 
+        public static String PORT = System.getenv("PORT");
 
     public void configure() {
+
 
         JacksonDataFormat jacksonDataFormat = new JacksonDataFormat( User.class );
         //jacksonDataFormat.setPrettyPrint( true );
@@ -21,7 +23,7 @@ public class MyRouteBuilder extends RouteBuilder {
         restConfiguration()
                 .component( "jetty" )
                 .enableCORS( true )
-                .port( 8080 );
+                .port( PORT );
 
         rest().path( "/listar" )
                 .get()
