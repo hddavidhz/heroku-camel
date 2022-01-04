@@ -21,7 +21,7 @@ public class MyRouteBuilder extends RouteBuilder {
         restConfiguration()
                 .component( "jetty" )
                 .enableCORS( true )
-                .port( 8050 );
+                .port( 8080 );
 
         rest().path( "/listar" )
                 .get()
